@@ -178,7 +178,7 @@ Assert an exception is not thrown:
 
     (sub { 1 })->should_not_throw();
 
-Assert exepection message matches regexp:
+Assert exception message matches regexp:
 
     (sub { die "Foo" })->should_throw(qr/F/);
 
