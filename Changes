@@ -1,4 +1,9 @@
 Revision history for Perl extension Test::Should::Engine
 
+0.02
+
+    [BUG FIX]
+    - should_equal throws exception on scalar values
+
 0.01    Fri Oct 26 10:14:16 2012
     - original version
