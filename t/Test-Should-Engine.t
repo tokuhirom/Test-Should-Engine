@@ -53,6 +53,9 @@ describe 'Test::Should::Engine' => sub {
         it 'returns true on same values' => sub {
             test_true('should_be_equal', {a => 'b'}, {a => 'b'});
         };
+        it 'returns true on same scalars' => sub {
+            test_true('should_be_equal', 1, 1);
+        };
         it 'returns true on non-same values' => sub {
             test_false('should_be_equal', {a => 'b'}, {a => 'c'});
         };
