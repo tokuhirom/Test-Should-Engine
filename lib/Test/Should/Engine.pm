@@ -217,13 +217,23 @@ You can see more details in t/01_autobox.t.
 
     done_testing;
 
+=head1 FAQ
+
+=over 4
+
+=item Why do you split a distribution from Test::Should?
+
+Test::Should depends to autobox. autobox is not needed by some users.
+
+=back
+
 =head1 AUTHOR
 
 Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>
 
 =head1 SEE ALSO
 
-L<https://github.com/visionmedia/should.js>
+Most part of features are ported from L<https://github.com/visionmedia/should.js>, thanks!
 
 =head1 LICENSE
 
