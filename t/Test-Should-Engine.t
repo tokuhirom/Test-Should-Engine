@@ -1,10 +1,12 @@
 use strict;
 use warnings;
 use utf8;
-use Test::Ika;
 use Test::Should::Engine;
 use Test::More;
 
+sub describe { goto &Test::More::subtest }
+sub context  { goto &Test::More::subtest }
+sub it       { goto &Test::More::subtest }
 
 sub test_true {
     local $Test::Builder::Level = $Test::Builder::Level + 1;
@@ -136,4 +138,5 @@ describe 'Test::Should::Engine' => sub {
     };
 };
 
-runtests;
+done_testing;
+
