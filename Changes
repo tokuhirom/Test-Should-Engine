@@ -1,5 +1,9 @@
 Revision history for Perl extension Test::Should::Engine
 
+0.03
+
+    - added should_be_true, should_be_false, should_be_undef
+
 0.02
 
     [BUG FIX]
