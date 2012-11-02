@@ -15,8 +15,12 @@ sub run {
     if ($pattern =~ /^should_not_(.+)$/) {
         $pattern = "should_$1";
         return !$class->run($pattern, $subject, @args);
-    } elsif ($pattern =~ 'should_be_ok') {
+    } elsif ($pattern eq 'should_be_ok' || $pattern eq 'should_be_true') {
         return !!$subject;
+    } elsif ($pattern eq 'should_be_false') {
+        return !$subject;
+    } elsif ($pattern eq 'should_be_undef') {
+        return not defined($subject);
     } elsif ($pattern eq 'should_be_empty') {
         if (ref $subject eq 'ARRAY') {
             return (@$subject == 0);

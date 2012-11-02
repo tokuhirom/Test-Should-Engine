@@ -27,6 +27,30 @@ describe 'Test::Should::Engine' => sub {
             test_false('should_be_ok', 0);
         };
     };
+    context 'should_be_true' => sub {
+        it 'returns true on true value' => sub {
+            test_true('should_be_true', 1);
+        };
+        it 'returns false on false value' => sub {
+            test_false('should_be_true', 0);
+        };
+    };
+    context 'should_be_false' => sub {
+        it 'returns false on false value' => sub {
+            test_false('should_be_false', 1);
+        };
+        it 'returns true on false value' => sub {
+            test_true('should_be_false', 0);
+        };
+    };
+    context 'should_be_undef' => sub {
+        it 'returns true on undef value' => sub {
+            test_true('should_be_undef', undef);
+        };
+        it 'returns false on defined value' => sub {
+            test_false('should_be_undef', 0);
+        };
+    };
     context 'should_not_be_ok' => sub {
         it 'returns false on true value' => sub {
             test_false('should_not_be_ok', 1);
