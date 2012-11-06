@@ -130,9 +130,10 @@ On String, the length is zero.
 
 strict equality.
 
-=item should_be_a
+=item should_be_a / should_be_an
 
     MyObj->new()->should_be_a('MyObj');
+    MyObj->new()->should_be_an('ARRAY');
 
 Checks type.
 
