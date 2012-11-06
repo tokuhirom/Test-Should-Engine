@@ -39,7 +39,11 @@ sub run {
     } elsif ($pattern eq 'should_match') {
         return !!($subject =~ $args[0]);
     } elsif ($pattern eq 'should_have_length') {
-        return length($subject) == $args[0];
+        if (ref $subject eq 'ARRAY') {
+            return (@$subject == $args[0]);
+        } else {
+            return length($subject) == $args[0];
+        }
     } elsif ($pattern eq 'should_include') {
         if (ref $subject eq 'ARRAY') {
             for (@$subject) {
