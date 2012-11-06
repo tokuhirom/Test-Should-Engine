@@ -92,6 +92,14 @@ describe 'Test::Should::Engine' => sub {
             test_false('should_be_a', bless([], 'Foo'), 'Bar');
         };
     };
+    context 'should_be_an' => sub {
+        it 'returns true on child class' => sub {
+            test_true('should_be_an', bless([], 'Foo'), 'Foo');
+        };
+        it 'returns false on non-child class' => sub {
+            test_false('should_be_an', bless([], 'Foo'), 'Bar');
+        };
+    };
     context 'should_be_above' => sub {
         it 'returns true on above value' => sub {
             test_true('should_be_above', 9, 5);
