@@ -30,7 +30,7 @@ sub run {
     } elsif ($pattern eq 'should_be_equal') {
         local $Storable::canonical = 1;
         return Storable::nfreeze(\$subject) eq Storable::nfreeze(\$args[0]);
-    } elsif ($pattern eq 'should_be_a') {
+    } elsif ($pattern =~ /^should_be_an?$/) {
         return UNIVERSAL::isa($subject, $args[0]);
     } elsif ($pattern eq 'should_be_above') {
         return $subject > $args[0];
@@ -130,9 +130,10 @@ On String, the length is zero.
 
 strict equality.
 
-=item should_be_a
+=item should_be_a / should_be_an
 
     MyObj->new()->should_be_a('MyObj');
+    MyObj->new()->should_be_an('ARRAY');
 
 Checks type.
 
