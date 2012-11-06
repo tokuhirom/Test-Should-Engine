@@ -30,7 +30,7 @@ sub run {
     } elsif ($pattern eq 'should_be_equal') {
         local $Storable::canonical = 1;
         return Storable::nfreeze(\$subject) eq Storable::nfreeze(\$args[0]);
-    } elsif ($pattern eq 'should_be_a') {
+    } elsif ($pattern =~ /^should_be_an?$/) {
         return UNIVERSAL::isa($subject, $args[0]);
     } elsif ($pattern eq 'should_be_above') {
         return $subject > $args[0];
